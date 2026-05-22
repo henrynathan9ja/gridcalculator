@@ -1,0 +1,116 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Nunito Semibold;
+    text-align: center;
+    padding: 16px;
+    /* display: flex;
+    flex-direction: column;
+    align-items: center; */
+}
+.overall {
+    max-width: 456px;
+    margin: 10px auto;
+    padding: 24px;
+    border-radius: 8px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 24px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, .15) inset;
+}
+
+header {
+    display: grid;
+    margin: auto;
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 350px;
+}
+[data-title = "grid calculator"], .caption {
+    grid-column: 1 / span 4;
+    /* background-color: blueviolet; */
+}
+.caption {
+    color: rgba(0, 0, 0, .4);
+}
+
+#display {
+    width: 100%;
+    height: minmax(120px, auto);
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    border-radius: 4px;
+    padding: 12px;
+    font-size: 36px;
+    background-color: rgba(0, 0, 0, .06);
+    position: relative;
+    overflow: auto;
+}
+
+#result, .keyDisplayer {
+    max-width: 100%;
+    overflow-wrap: break-word;
+    border: solid 1px black;
+}
+
+.flashBar {
+    display: none;
+}
+
+.enclosed {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 50px;
+}
+
+#keypad {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-gap: 12px;
+}
+
+.keys, .operators {
+    display: grid;
+    grid-gap: 6px;
+    grid-auto-rows: minmax(75px, auto);
+}
+
+.keys {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.key, .operator, #del, #clr, #equals, .perc, .dot {
+    background-color: rgb(206, 236, 255);
+    font-size: 1.4rem;
+    padding: 8px;
+    border-radius: 4px;
+    transition: background-color .6s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.key:hover, .operator:hover, #del:hover, #clr:hover, #equals:hover, .perc:hover, .dot:hover {
+    background-color: rgba(17, 88, 181, 0.3);
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.key:active, #del:active, .operator:active, .perc:active, .dot:active {
+    background-color: rgba(220, 20, 60, .5);
+}
+
+#equals {
+    grid-column: span 2;
+}
+#equals:active {
+    background-color: rgba(85, 107, 47, 1)
+}
+#clr:active {
+    background-color: rgba(255, 255, 255, .5);
+    color: rgba(0, 0, 0, .5);
+}
