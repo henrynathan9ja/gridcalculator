@@ -53,7 +53,6 @@ header {
 #result, .keyDisplayer {
     max-width: 100%;
     overflow-wrap: break-word;
-    border: solid 1px black;
 }
 
 .flashBar {
